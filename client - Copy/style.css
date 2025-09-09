@@ -1,0 +1,167 @@
+/* ===== GENERAL RESET & BASE ===== */
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #e5e7eb;
+  color: #1f2937;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ===== HEADER & LOGO ===== */
+header {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.logo-small {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  color: #1e40af;
+  margin: 0;
+}
+
+/* ===== SCHEDULER CONTAINER - input form and output side by side ===== */
+.scheduler-container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  flex-wrap: wrap;
+}
+
+/* Form and output containers get equal space */
+#timetable-form,
+#timetable-output {
+  flex: 1 1 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-x: auto;
+  max-height: 600px;
+  padding: 10px;
+  background: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+/* Each day block stacks vertically inside form and output */
+.form-block-container,
+.timetable-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+  overflow-y: auto;
+}
+
+/* Day block style */
+.day-form-block,
+.day-column {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+/* Time slot rows - input & output */
+.form-row,
+.time-block {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  gap: 15px;
+}
+
+/* Form row label */
+.form-row label {
+  flex: 1;
+  font-weight: 600;
+  color: #374151;
+  font-size: 1rem;
+}
+
+/* Form row select dropdown */
+.form-row select {
+  flex: 2;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1.5px solid #9ca3af;
+  transition: border-color 0.3s ease;
+}
+
+.form-row select:hover,
+.form-row select:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+/* Time label in output */
+.time-label {
+  flex: 1;
+  font-weight: 600;
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+/* Subject label in output */
+.subject-label {
+  flex: 2;
+  font-weight: 700;
+  color: #111827;
+  font-size: 1.1rem;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 25px;
+  background-color: #1e40af;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  background-color: #4338ca;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .scheduler-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #timetable-form,
+  #timetable-output {
+    flex: unset;
+    width: 100%;
+    max-height: none;
+  }
+}
+
